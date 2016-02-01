@@ -12,6 +12,7 @@
 		E3DD6C991C5E75A90002663B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3DD6C981C5E75A90002663B /* Assets.xcassets */; };
 		E3DD6C9C1C5E75A90002663B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3DD6C9A1C5E75A90002663B /* LaunchScreen.storyboard */; };
 		E3DD6CA41C5E7A400002663B /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DD6CA31C5E7A400002663B /* MovieViewController.swift */; };
+		E3DD6CAA1C5EF4B60002663B /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DD6CA91C5EF4B60002663B /* MovieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		E3DD6C9B1C5E75A90002663B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3DD6C9D1C5E75A90002663B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3DD6CA31C5E7A400002663B /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		E3DD6CA91C5EF4B60002663B /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,31 @@
 		E3DD6C901C5E75A90002663B /* TopDogFlicks */ = {
 			isa = PBXGroup;
 			children = (
+				E3DD6CA81C5EF3D70002663B /* View Controllers */,
+				E3DD6CA51C5EF3A90002663B /* Views */,
 				E3DD6C911C5E75A90002663B /* AppDelegate.swift */,
 				E3DD6C951C5E75A90002663B /* Main.storyboard */,
 				E3DD6C981C5E75A90002663B /* Assets.xcassets */,
 				E3DD6C9A1C5E75A90002663B /* LaunchScreen.storyboard */,
 				E3DD6C9D1C5E75A90002663B /* Info.plist */,
-				E3DD6CA31C5E7A400002663B /* MovieViewController.swift */,
 			);
 			path = TopDogFlicks;
+			sourceTree = "<group>";
+		};
+		E3DD6CA51C5EF3A90002663B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E3DD6CA91C5EF4B60002663B /* MovieCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E3DD6CA81C5EF3D70002663B /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E3DD6CA31C5E7A400002663B /* MovieViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +156,7 @@
 			files = (
 				E3DD6C921C5E75A90002663B /* AppDelegate.swift in Sources */,
 				E3DD6CA41C5E7A400002663B /* MovieViewController.swift in Sources */,
+				E3DD6CAA1C5EF4B60002663B /* MovieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -45,7 +45,7 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
                     if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
                         data, options:[]) as? NSDictionary {
                             print("response: \(responseDictionary)")
-                         self.movies = responseDictionary["results"] as! [NSDictionary]
+                            self.movies = responseDictionary["results"] as! [NSDictionary]
                             self.TableView.reloadData()
                     }
                 }
@@ -69,13 +69,14 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        let cell = TableView.dequeueReusableCellWithIdentifier("MovieCell",forIndexPath: indexPath)
+        let cell = TableView.dequeueReusableCellWithIdentifier("MovieCell",forIndexPath: indexPath) as! MovieCell
         // ! means that it should not be nil
         // force cast
         let movie = movies![indexPath.row]
         let title = movie["title"] as! String
-        
-        cell.textLabel!.text = title
+        let overview = movie["overview"] as! String
+        cell.TitleLabel.text = title
+        cell.OverviewLabel.text = overview
         print("row \(indexPath.row)");
         
         return cell;
