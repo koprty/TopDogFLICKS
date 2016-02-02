@@ -45,7 +45,7 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
                     if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
                         data, options:[]) as? NSDictionary {
                             print("response: \(responseDictionary)")
-                            self.movies = responseDictionary["results"] as! [NSDictionary]
+                            self.movies = (responseDictionary["results"] as! [NSDictionary])
                             self.TableView.reloadData()
                     }
                 }
