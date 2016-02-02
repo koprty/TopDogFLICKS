@@ -7,11 +7,11 @@
 //
 
 import UIKit
-
+import AFNetworking
 class MovieViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var TableView: UITableView!
-    
+  
     // ? is optional character
     var movies :[NSDictionary]?
     
@@ -75,9 +75,19 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         let movie = movies![indexPath.row]
         let title = movie["title"] as! String
         let overview = movie["overview"] as! String
+        let posterpath = movie["poster_path"] as! String
+    
+        let baseUrl = "http://image.tmdb.org/t/p/w500/"
+        //String("http://image.tmdb.org/t/p/w500/")
+        
+        let posterUrl = NSURL(string: baseUrl + posterpath)
+        
+        cell.PosterImageView.setImageWithURL(posterUrl!)
+        
         cell.TitleLabel.text = title
         cell.OverviewLabel.text = overview
-        print("row \(indexPath.row)");
+
+        // print("row \(indexPath.row)");
         
         return cell;
         
