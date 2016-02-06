@@ -2,23 +2,23 @@
 
 **Top Dog Flicks** is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: **3** hours spent in total
+Time spent: **4** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is complete:
 
 - [x] User can view a list of movies currently playing in theaters from The Movie Database.
-- [ ] Poster images are loaded using the UIImageView category in the AFNetworking library.
-- [ ] User sees a loading state while waiting for the movies API.
-- [ ] User can pull to refresh the movie list.
+- [x] Poster images are loaded using the UIImageView category in the AFNetworking library.
+- [x] User sees a loading state while waiting for the movies API.
+- [x] User can pull to refresh the movie list.
 
 The following **optional** features are implemented:
 
 - [ ] User sees an error message when there's a networking error.
 - [ ] Movies are displayed using a CollectionView instead of a TableView.
 - [ ] User can search for a movie.
-- [ ] All images fade in as they are loading.
+- [x] All images fade in as they are loading.
 - [ ] Customize the UI.
 
 The following **additional** features are implemented:
@@ -44,7 +44,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2016] [Lise Ho]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
