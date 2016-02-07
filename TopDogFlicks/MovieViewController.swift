@@ -13,21 +13,35 @@ import MBProgressHUD
 class MovieViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var TableView: UITableView!
+    @IBOutlet weak var ErrorImageView: UIImageView!
   
+    @IBOutlet weak var ErrorTextView: UILabel!
     // ? is optional character
     var movies :[NSDictionary]?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
+        super.viewDidLoad()        
         //Set datasource and delegate to itself
         TableView.dataSource = self;
         TableView.delegate = self;
+        
+        self.ErrorTextView.text = String("Network Error. Pull to Refresh.")
+        self.ErrorTextView.backgroundColor = UIColor.darkGrayColor()
+        self.ErrorTextView.textColor = UIColor.whiteColor()
+        self.ErrorTextView.textAlignment = NSTextAlignment.Center
+        //ErrorTextView.hidden = true
+        
+        var image : UIImage = UIImage(named:"sadpup.gif")!
+        ErrorImageView.image = image
+        ErrorImageView.hidden = true
+    
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
         TableView.insertSubview(refreshControl, atIndex: 0)
         // get Data from Movie API
         loadDatafromNetwork()
+        
+        
         
     }
 
@@ -61,8 +75,19 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
                             print("response: \(responseDictionary)")
                             
                             self.movies = (responseDictionary["results"] as! [NSDictionary])
+                            
                             self.TableView.reloadData()
+                             self.ErrorTextView.text = String("TOP DOG FLICKS")
+                            //self.ErrorTextView.hidden = true
+                            self.TableView.hidden = false
+                            self.ErrorImageView.hidden = true
                     }
+                }else{
+                    self.ErrorTextView.text = String("Network Error. Pull to Refresh.")
+                    //self.ErrorTextView.hidden = false
+                    self.ErrorImageView.hidden = false
+                    self.TableView.hidden = false
+                    
                 }
                 
                 
@@ -93,7 +118,7 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
             completionHandler: { (data, response, error) in
                 
                 // ... Use the new data to update the data source ...
-                
+                self.loadDatafromNetwork()
                 // Reload the tableView now that there is new data
                 self.TableView.reloadData()
                 
@@ -145,9 +170,11 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
                         print("Image was cached so just update the image")
                         cell.PosterImageView.image = image
                     }
+                    
                 },
                 failure: { (posterRequest, imageResponse, error) -> Void in
                     // do something for the failure condition
+                    
             })
 
             //cell.PosterImageView.setImageWithURL(posterUrl!)

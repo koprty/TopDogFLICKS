@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		323AA7B4819B572CE7D8399C /* Pods_TopDogFlicks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69F24FA94F9DFF7528B9C21 /* Pods_TopDogFlicks.framework */; };
+		E34F4AB61C67C18D002EEC81 /* sadpup.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E34F4AB51C67C18D002EEC81 /* sadpup.jpg */; };
+		E34F4AB81C67C1A8002EEC81 /* runningdog.gif in Resources */ = {isa = PBXBuildFile; fileRef = E34F4AB71C67C1A8002EEC81 /* runningdog.gif */; };
+		E34F4ABA1C67E60D002EEC81 /* sadpup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E34F4AB91C67E60D002EEC81 /* sadpup.gif */; };
 		E3DD6C921C5E75A90002663B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DD6C911C5E75A90002663B /* AppDelegate.swift */; };
 		E3DD6C971C5E75A90002663B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3DD6C951C5E75A90002663B /* Main.storyboard */; };
 		E3DD6C991C5E75A90002663B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3DD6C981C5E75A90002663B /* Assets.xcassets */; };
@@ -20,6 +23,9 @@
 		59B39EB26EB2951A9AEF0C0B /* Pods-TopDogFlicks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopDogFlicks.release.xcconfig"; path = "Pods/Target Support Files/Pods-TopDogFlicks/Pods-TopDogFlicks.release.xcconfig"; sourceTree = "<group>"; };
 		92A4BC4B720EDEB5419F91B9 /* Pods-TopDogFlicks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopDogFlicks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TopDogFlicks/Pods-TopDogFlicks.debug.xcconfig"; sourceTree = "<group>"; };
 		C69F24FA94F9DFF7528B9C21 /* Pods_TopDogFlicks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TopDogFlicks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E34F4AB51C67C18D002EEC81 /* sadpup.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sadpup.jpg; sourceTree = "<group>"; };
+		E34F4AB71C67C1A8002EEC81 /* runningdog.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = runningdog.gif; sourceTree = "<group>"; };
+		E34F4AB91C67E60D002EEC81 /* sadpup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sadpup.gif; sourceTree = "<group>"; };
 		E3DD6C8E1C5E75A90002663B /* TopDogFlicks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopDogFlicks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3DD6C911C5E75A90002663B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3DD6C961C5E75A90002663B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +65,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E34F4AB41C67C161002EEC81 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				E34F4AB91C67E60D002EEC81 /* sadpup.gif */,
+				E34F4AB51C67C18D002EEC81 /* sadpup.jpg */,
+				E34F4AB71C67C1A8002EEC81 /* runningdog.gif */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		E3DD6C851C5E75A90002663B = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +96,7 @@
 		E3DD6C901C5E75A90002663B /* TopDogFlicks */ = {
 			isa = PBXGroup;
 			children = (
+				E34F4AB41C67C161002EEC81 /* images */,
 				E3DD6CA81C5EF3D70002663B /* View Controllers */,
 				E3DD6CA51C5EF3A90002663B /* Views */,
 				E3DD6C911C5E75A90002663B /* AppDelegate.swift */,
@@ -170,7 +187,10 @@
 			files = (
 				E3DD6C9C1C5E75A90002663B /* LaunchScreen.storyboard in Resources */,
 				E3DD6C991C5E75A90002663B /* Assets.xcassets in Resources */,
+				E34F4AB61C67C18D002EEC81 /* sadpup.jpg in Resources */,
+				E34F4ABA1C67E60D002EEC81 /* sadpup.gif in Resources */,
 				E3DD6C971C5E75A90002663B /* Main.storyboard in Resources */,
+				E34F4AB81C67C1A8002EEC81 /* runningdog.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
