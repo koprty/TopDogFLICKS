@@ -29,9 +29,8 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.ErrorTextView.backgroundColor = UIColor.darkGrayColor()
         self.ErrorTextView.textColor = UIColor.whiteColor()
         self.ErrorTextView.textAlignment = NSTextAlignment.Center
-        //ErrorTextView.hidden = true
         
-        var image : UIImage = UIImage(named:"sadpup.gif")!
+        let image : UIImage = UIImage(named:"sadpup.gif")!
         ErrorImageView.image = image
         ErrorImageView.hidden = true
     
@@ -40,8 +39,6 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         TableView.insertSubview(refreshControl, atIndex: 0)
         // get Data from Movie API
         loadDatafromNetwork()
-        
-        
         
     }
 
