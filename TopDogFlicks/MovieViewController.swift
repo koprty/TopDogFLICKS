@@ -140,15 +140,19 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = TableView.dequeueReusableCellWithIdentifier("MovieCell",forIndexPath: indexPath) as! MovieCell
+        
         // ! means that it should not be nil
         // force cast
         let movie = movies![indexPath.row]
         let title = movie["title"] as! String
         let overview = movie["overview"] as! String
+       
+        let baseUrl = "http://image.tmdb.org/t/p/w500/"
         //let posterpath = movie["poster_path"] as! String
+        // safely pass in good non-nil value for poster URL
         if let posterpath = movie["poster_path"] as? String {
-            let baseUrl = "http://image.tmdb.org/t/p/w500/"
-            //String("http://image.tmdb.org/t/p/w500/")
+           
+            
             let posterUrl = NSURL(string: baseUrl + posterpath)
             let posterRequest = NSURLRequest(URL: posterUrl!)
             cell.PosterImageView.setImageWithURLRequest(posterRequest,
@@ -190,15 +194,34 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         return cell;
         
     }
-}
+    
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+    }
+    */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let cell = sender as! UITableViewCell
+        let indexPath = TableView.indexPathForCell(cell)
+        let movie = movies![indexPath!.row]
+        // assign segue's destination View Controller
+        // class is uppercase
+        let elementViewController = segue.destinationViewController as! ElementViewController
+        
+        elementViewController.movie = movie
+        print ("prepareForSegue has been called")
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+
+    
+    
+}
+
 
 
