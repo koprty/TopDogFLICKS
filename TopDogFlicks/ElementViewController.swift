@@ -12,7 +12,7 @@ class ElementViewController: UIViewController {
 
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var overviewLabel: UILabel! 
+    @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -27,6 +27,8 @@ class ElementViewController: UIViewController {
         titleLabel.text = title
         let overview = movie["overview"] as? String
         overviewLabel.text = overview
+        overviewLabel.sizeToFit()
+        
         // Do any additional setup after loading the view.
         let baseUrl = "http://image.tmdb.org/t/p/w500/"
         //let posterpath = movie["poster_path"] as! String
