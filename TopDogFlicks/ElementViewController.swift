@@ -21,7 +21,6 @@ class ElementViewController: UIViewController {
         super.viewDidLoad()
         
         scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: infoView.frame.origin.y + infoView.frame.size.height )
-        print (movie)
 
         let title = movie["title"] as? String
         titleLabel.text = title
@@ -60,8 +59,6 @@ class ElementViewController: UIViewController {
                     // do something for the failure condition
                     
             })
-            
-            //cell.PosterImageView.setImageWithURL(posterUrl!)
         }else{
             self.backgroundImage.image = nil
         }

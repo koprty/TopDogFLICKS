@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		323AA7B4819B572CE7D8399C /* Pods_TopDogFlicks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69F24FA94F9DFF7528B9C21 /* Pods_TopDogFlicks.framework */; };
 		E34F4ABA1C67E60D002EEC81 /* sadpup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E34F4AB91C67E60D002EEC81 /* sadpup.gif */; };
+		E37FDACA1C6C1137006F87B9 /* CollectionMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37FDAC91C6C1137006F87B9 /* CollectionMovieCell.swift */; };
 		E3A6301C1C696B7C0034DC35 /* ElementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A6301B1C696B7C0034DC35 /* ElementViewController.swift */; };
 		E3DD6C921C5E75A90002663B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DD6C911C5E75A90002663B /* AppDelegate.swift */; };
 		E3DD6C971C5E75A90002663B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3DD6C951C5E75A90002663B /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		92A4BC4B720EDEB5419F91B9 /* Pods-TopDogFlicks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopDogFlicks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TopDogFlicks/Pods-TopDogFlicks.debug.xcconfig"; sourceTree = "<group>"; };
 		C69F24FA94F9DFF7528B9C21 /* Pods_TopDogFlicks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TopDogFlicks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34F4AB91C67E60D002EEC81 /* sadpup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sadpup.gif; sourceTree = "<group>"; };
+		E37FDAC91C6C1137006F87B9 /* CollectionMovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionMovieCell.swift; sourceTree = "<group>"; };
 		E3A6301B1C696B7C0034DC35 /* ElementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementViewController.swift; sourceTree = "<group>"; };
 		E3DD6C8E1C5E75A90002663B /* TopDogFlicks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopDogFlicks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3DD6C911C5E75A90002663B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				E3DD6CA91C5EF4B60002663B /* MovieCell.swift */,
+				E37FDAC91C6C1137006F87B9 /* CollectionMovieCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				E3DD6C921C5E75A90002663B /* AppDelegate.swift in Sources */,
 				E3DD6CA41C5E7A400002663B /* MovieViewController.swift in Sources */,
 				E3DD6CAA1C5EF4B60002663B /* MovieCell.swift in Sources */,
+				E37FDACA1C6C1137006F87B9 /* CollectionMovieCell.swift in Sources */,
 				E3A6301C1C696B7C0034DC35 /* ElementViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

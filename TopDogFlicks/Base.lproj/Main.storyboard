@@ -13,66 +13,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="172" sectionHeaderHeight="28" sectionFooterHeight="28" id="emp-TH-XIz">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bcE-V2-XXA">
+                                <rect key="frame" x="0.0" y="335" width="320" height="233"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IJF-Oc-wT6">
-                                    <rect key="frame" x="0.0" y="64" width="320" height="36"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bcE-V2-XXA">
-                                    <rect key="frame" x="0.0" y="300" width="320" height="268"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="172" id="Qoz-Ri-6Qp" customClass="MovieCell" customModule="TopDogFlicks" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="320" height="172"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qoz-Ri-6Qp" id="TD7-o9-glA">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="171.5"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dqr-3V-sOm">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Muk-VD-dV2">
+                                    <size key="itemSize" width="143" height="206"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="com.liseho.moviecell" id="WdI-Wc-879" customClass="CollectionMovieCell" customModule="TopDogFlicks" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="143" height="206"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="143" height="206"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CRu-C2-9zc" customClass="Movie">
-                                                    <rect key="frame" x="8" y="0.0" width="288" height="26"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="w13-SG-ZN6">
-                                                    <rect key="frame" x="130" y="34" width="176" height="129.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="EpP-hT-ZRf">
-                                                    <rect key="frame" x="8" y="34" width="114" height="129.5"/>
+                                                    <rect key="frame" x="0.0" y="-8" width="151" height="221"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
-                                        </tableViewCellContentView>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
                                         <connections>
-                                            <outlet property="OverviewLabel" destination="w13-SG-ZN6" id="52F-ZO-zrP"/>
-                                            <outlet property="PosterImageView" destination="EpP-hT-ZRf" id="gAG-qt-gwu"/>
-                                            <outlet property="TitleLabel" destination="CRu-C2-9zc" id="0mZ-Np-57l"/>
-                                            <segue destination="hDs-VQ-A01" kind="push" id="74z-ou-K2x"/>
+                                            <outlet property="posterImage" destination="EpP-hT-ZRf" id="exE-I6-xEM"/>
+                                            <segue destination="hDs-VQ-A01" kind="push" id="Jkg-8i-4AA"/>
                                         </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="fhs-K0-7bY"/>
                     <connections>
-                        <outlet property="ErrorImageView" destination="bcE-V2-XXA" id="biC-UF-x1u"/>
-                        <outlet property="ErrorTextView" destination="IJF-Oc-wT6" id="x1F-P8-HxS"/>
-                        <outlet property="TableView" destination="emp-TH-XIz" id="UNY-a1-9W3"/>
+                        <outlet property="ErrorImageView" destination="bcE-V2-XXA" id="7MZ-Jx-ZOG"/>
+                        <outlet property="FlowLayout" destination="Muk-VD-dV2" id="eMR-0J-dJP"/>
+                        <outlet property="collectionView" destination="dqr-3V-sOm" id="WNG-YM-etr"/>
+                        <outlet property="contentView" destination="8bC-Xf-vdC" id="ugH-ew-aJY"/>
+                        <outlet property="flowLayout" destination="Muk-VD-dV2" id="MYC-4V-2YN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
