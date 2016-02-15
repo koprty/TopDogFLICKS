@@ -83,6 +83,7 @@ The following **additional** features are implemented:
 List anything else that you can get done to improve the app functionality!
 - [x] Scroll View implemented
 - [x] Added two other tabs: Popular and Upcoming Movies :D 
+- [x] Added another dog icon :) and Customized the UI a tiny bit
 - [x] Part 1 Optional: 
 - - Movies are displayed using a CollectionView instead of a TableView.
 
@@ -100,10 +101,9 @@ Here's a walkthrough of implemented user stories:
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
-
 Describe any challenges encountered while building the app.
 
-### Image Credits
+## Image Credits
 
 - The Four Icons used in the app's tab bar' were gathered from the Iconmonstr
 - One of the Icons was: husky by Christine Komatsu from the Noun Project
