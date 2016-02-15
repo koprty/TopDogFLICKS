@@ -13,12 +13,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bcE-V2-XXA">
-                                <rect key="frame" x="0.0" y="335" width="320" height="233"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dqr-3V-sOm">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Muk-VD-dV2">
                                     <size key="itemSize" width="143" height="206"/>
@@ -28,7 +24,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="com.liseho.moviecell" id="WdI-Wc-879" customClass="CollectionMovieCell" customModule="TopDogFlicks" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="143" height="206"/>
+                                        <rect key="frame" x="0.0" y="64" width="143" height="206"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="143" height="206"/>
@@ -48,15 +44,31 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bcE-V2-XXA">
+                                <rect key="frame" x="0.0" y="307" width="320" height="251"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ta3-na-PZN">
+                                <rect key="frame" x="0.0" y="60" width="320" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xwX-qb-YJg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="fhs-K0-7bY"/>
                     <connections>
+                        <outlet property="ContentView" destination="8bC-Xf-vdC" id="WoE-8R-hx2"/>
                         <outlet property="ErrorImageView" destination="bcE-V2-XXA" id="7MZ-Jx-ZOG"/>
+                        <outlet property="ErrorLabel" destination="Ta3-na-PZN" id="OO4-KY-DJ2"/>
                         <outlet property="FlowLayout" destination="Muk-VD-dV2" id="eMR-0J-dJP"/>
                         <outlet property="collectionView" destination="dqr-3V-sOm" id="WNG-YM-etr"/>
-                        <outlet property="contentView" destination="8bC-Xf-vdC" id="ugH-ew-aJY"/>
                         <outlet property="flowLayout" destination="Muk-VD-dV2" id="MYC-4V-2YN"/>
                     </connections>
                 </viewController>

@@ -24,6 +24,7 @@ class ElementViewController: UIViewController {
 
         let title = movie["title"] as? String
         titleLabel.text = title
+        titleLabel.sizeToFit()
         let overview = movie["overview"] as? String
         overviewLabel.text = overview
         overviewLabel.sizeToFit()

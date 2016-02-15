@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate{
 
     var window: UIWindow?
 
@@ -54,14 +54,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //insert the navigation controllers into the tabbar controller
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [nowPlayingNavController, topRatedNavController,popularNavController,upcomingNavController]
-    
+        
         //make the tabBarController control the current window and make it visible
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         
         
+        
         return true
     }
+    
+
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

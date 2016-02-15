@@ -13,18 +13,28 @@ import MBProgressHUD
 
 class MovieViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
-    
+    // View containing of all content
+    @IBOutlet var ContentView: UIView!
+    // Error image View
     @IBOutlet weak var ErrorImageView: UIImageView!
+    //collection View
     @IBOutlet weak var collectionView: UICollectionView!
     // ? is optional character
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
-    @IBOutlet var contentView: UIView!
+    
+    @IBOutlet weak var ErrorLabel: UIButton!
+    @IBAction func buttonPressed(sender: UIButton) {
+        reloadDatafromNetwork(sender)
+    }
+    
+    // Global Variables
     var movies :[NSDictionary]?
     var apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed" as String
     var endpoint : String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         collectionView.dataSource = self
         collectionView.delegate = self
 
@@ -34,17 +44,35 @@ class MovieViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
         
+        //ERROR VIEW
         let image : UIImage = UIImage(named:"sadpup.gif")!
         ErrorImageView.image = image
-        ErrorImageView.hidden = false
+        ErrorImageView.hidden = true
         
+        ErrorLabel.setTitle("Network Error. Click to Refresh." as! String, forState:UIControlState.Normal)
+        ErrorLabel.backgroundColor = UIColor.darkGrayColor()
+        ErrorLabel.titleLabel!.textColor=UIColor.whiteColor()
+        ErrorLabel.hidden = true
+  
         
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
         collectionView.insertSubview(refreshControl, atIndex: 0)
         // get Data from Movie API
         loadDatafromNetwork()
+        
+        
+        // style navigation bar
+        self.navigationItem.title = "TOP DOG FLICKS"
+        if let navigationBar = navigationController?.navigationBar{
 
+            let righticon = UIImageView(frame:CGRect(x:(navigationBar.bounds.width - 60),y:0, width:50, height:50))
+            righticon.image = UIImage(named:"top_dog")
+            navigationBar.addSubview(righticon)
+        }
+    }
+    func reloadDatafromNetwork(button:UIButton){
+        loadDatafromNetwork()
     }
     func loadDatafromNetwork(){
         // import movie api stuff
@@ -78,16 +106,14 @@ class MovieViewController: UIViewController, UICollectionViewDataSource, UIColle
                             self.movies = (responseDictionary["results"] as! [NSDictionary])
                             
                             self.collectionView.reloadData()
-                            //self.ErrorTextView.text = String("TOP DOG FLICKS")
                             self.collectionView.hidden = false
                             self.ErrorImageView.hidden = true
+                            self.ErrorLabel.hidden = true
                     }
                 }else{
-                    //self.ErrorTextView.text = String("Network Error. Pull to Refresh.")
-                    //self.ErrorTextView.hidden = false
+                    self.collectionView.hidden = false
                     self.ErrorImageView.hidden = false
-                    self.collectionView.hidden = true
-                    
+                    self.ErrorLabel.hidden = false
                 }
         })
         task.resume()
@@ -118,7 +144,7 @@ class MovieViewController: UIViewController, UICollectionViewDataSource, UIColle
                 self.loadDatafromNetwork()
                 // Reload the tableView now that there is new data
                 self.collectionView.reloadData()
-                
+
                 // Tell the refreshControl to stop spinning
                 refreshControl.endRefreshing()
         });
@@ -162,10 +188,11 @@ class MovieViewController: UIViewController, UICollectionViewDataSource, UIColle
             // if movies is not nil
             return movies.count;
         }
+        
         return 0;
     }
     
-    
+
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("com.liseho.moviecell", forIndexPath: indexPath) as! CollectionMovieCell
         //yum
@@ -234,5 +261,5 @@ class MovieViewController: UIViewController, UICollectionViewDataSource, UIColle
         let height = CGFloat(Int(totalheight) / (numberOfCellsPerRow))
         return CGSizeMake(width, height)
     }
-
+    
 }

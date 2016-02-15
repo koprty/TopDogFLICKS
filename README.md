@@ -76,25 +76,26 @@ The following **required** functionality is completed:
 The following **optional** features are implemented:
 
 - [ ] For the large poster, load the low resolution image first and then switch to the high resolution image when complete.
-- [ ] Customize the navigation bar.
+- [x] Customize the navigation bar.
 
 The following **additional** features are implemented:
 
-- [x] List anything else that you can get done to improve the app functionality!
-- Scroll View implemented
-- Added two other tabs: Popular and Upcoming Movies :D 
-- Part 1 Optional: Movies are displayed using a CollectionView instead of a TableView.
+List anything else that you can get done to improve the app functionality!
+- [x] Scroll View implemented
+- [x] Added two other tabs: Popular and Upcoming Movies :D 
+- [x] Part 1 Optional: 
+- - Movies are displayed using a CollectionView instead of a TableView.
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. 
-2. 
+1. Icon for the Application Start
+2. Getting the perfect fitting of the image sizes
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='demo2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -102,9 +103,16 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 Describe any challenges encountered while building the app.
 
+### Image Credits
+
+- The Four Icons used in the app's tab bar' were gathered from the Iconmonstr
+- One of the Icons was: husky by Christine Komatsu from the Noun Project
+- The network error gif was found online via Google Images 
+
 ## License
 
 Copyright [2016] [Lise Ho]
+
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
