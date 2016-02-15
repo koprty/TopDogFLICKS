@@ -21,6 +21,7 @@ class MovieViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet var contentView: UIView!
     var movies :[NSDictionary]?
     var apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed" as String
+    var endpoint : String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +50,7 @@ class MovieViewController: UIViewController, UICollectionViewDataSource, UIColle
         // import movie api stuff
         // Network request to Movie API
        
-        let url = NSURL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")
+        let url = NSURL(string: "https://api.themoviedb.org/3/movie/\(endpoint)?api_key=\(apiKey)")
         let request = NSURLRequest(
             URL: url!,
             cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData,
@@ -96,7 +97,7 @@ class MovieViewController: UIViewController, UICollectionViewDataSource, UIColle
     // Updates the tableView with the new data
     // Hides the RefreshControl
     func refreshControlAction(refreshControl: UIRefreshControl) {
-        let url = NSURL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")
+        let url = NSURL(string: "https://api.themoviedb.org/3/movie/\(endpoint)?api_key=\(apiKey)")
         let request = NSURLRequest(
             URL: url!,
             cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData,
@@ -211,8 +212,15 @@ class MovieViewController: UIViewController, UICollectionViewDataSource, UIColle
         cell.posterImage.frame.size.width = cell.frame.size.width
         cell.posterImage.frame.size.height=cell.frame.size.height
         
+        /* Because switch to Collection View, this is no longer needed.
+        // No color when the user selects cell
+        cell.selectionStyle = .None
         // print("row \(indexPath.row)");
-        
+        */
+        // Use a red color when the user selects the cell
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = self.view.tintColor
+        cell.selectedBackgroundView = backgroundView
         return cell;
     }
 

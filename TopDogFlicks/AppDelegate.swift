@@ -16,6 +16,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        //programmatically set up tabs
+        window = UIWindow(frame:UIScreen.mainScreen().bounds)
+        
+        let storyboard = UIStoryboard(name:"Main",bundle: nil)
+        
+        //NOW PLAYING Option
+        let nowPlayingNavController = storyboard.instantiateViewControllerWithIdentifier("MoviesNav") as! UINavigationController
+        let nowPlayingViewController = nowPlayingNavController.topViewController as! MovieViewController
+        nowPlayingViewController.endpoint="now_playing"
+        nowPlayingNavController.tabBarItem.title = "Now Playing"
+        nowPlayingNavController.tabBarItem.image = UIImage(named:"now_playing")
+        
+        //TOP RATED Option
+        let topRatedNavController = storyboard.instantiateViewControllerWithIdentifier("MoviesNav") as! UINavigationController
+        let topRatedViewController = topRatedNavController.topViewController as! MovieViewController
+        topRatedViewController.endpoint="top_rated"
+        topRatedNavController.tabBarItem.title = "Top Rated"
+        topRatedNavController.tabBarItem.image = UIImage(named:"top_rated")
+        
+        //EXTRA FUN STUFF :D 
+        //POPULAR Now
+        let popularNavController = storyboard.instantiateViewControllerWithIdentifier("MoviesNav")as! UINavigationController
+        let popularViewController = popularNavController.topViewController as! MovieViewController
+        popularViewController.endpoint = "popular"
+        popularNavController.tabBarItem.title = "Popular"
+        popularNavController.tabBarItem.image = UIImage(named:"popular")
+        
+        
+        //UPCOMING
+        let upcomingNavController = storyboard.instantiateViewControllerWithIdentifier("MoviesNav") as! UINavigationController
+        let upcomingViewController = upcomingNavController.topViewController as! MovieViewController
+        upcomingViewController.endpoint = "upcoming"
+        upcomingNavController.tabBarItem.title = "Upcoming"
+        upcomingNavController.tabBarItem.image = UIImage(named:"upcoming")
+        
+        //insert the navigation controllers into the tabbar controller
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [nowPlayingNavController, topRatedNavController,popularNavController,upcomingNavController]
+    
+        //make the tabBarController control the current window and make it visible
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
+        
+        
         return true
     }
 
